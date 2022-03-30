@@ -219,7 +219,7 @@ local function sort_treesitter(bufnr, opts)
     })
   end
 
-  vim.lsp.util.apply_text_edits(edits, bufnr)
+  vim.lsp.util.apply_text_edits(edits, bufnr, 'utf-8')
 end
 
 function M.visual_sort_tailwind_classes(opts)
@@ -242,7 +242,7 @@ function M.visual_sort_tailwind_classes(opts)
     character = range[4]
   }
 
-  vim.lsp.util.apply_text_edits({edit}, 0)
+  vim.lsp.util.apply_text_edits({edit}, 0, 'utf-8')
 end
 
 function M.string_sort_tailwind_classes(str, opts)
@@ -300,7 +300,7 @@ function M.buf_sort_tailwind_classes(bufnr, opts)
     })
   end
 
-  vim.lsp.util.apply_text_edits(edits, bufnr)
+  vim.lsp.util.apply_text_edits(edits, bufnr, 'utf-8')
 end
 
 function M._on_buf_write()
